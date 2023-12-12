@@ -1,0 +1,69 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("\nChoose an operation:");
+            Console.WriteLine("1. Find Factorial Value");
+            Console.WriteLine("2. Money Conversion");
+            Console.WriteLine("3. Cube of a Given Number");
+            Console.WriteLine("4. Generate Fibonacci Series");
+            Console.WriteLine("5. Exit");
+
+            Console.Write("Enter your choice (1-5): ");
+            int choice = int.Parse(Console.ReadLine());
+
+            if (choice == 5)
+            {
+                Console.WriteLine("Exiting the program. Goodbye!");
+                return;
+            }
+
+            switch (choice)
+            {
+                case 1:
+                    PerformOperation("Factorial Calculator", "Enter a number: ", n => Factorial(n));
+                    break;
+                case 2:
+                    PerformOperation("Currency Converter", "Enter amount in USD: ", amount => ConvertCurrency(amount, 1.2m));
+                    break;
+                case 3:
+                    PerformOperation("Cube Calculator", "Enter a number: ", n => Math.Pow(n, 3));
+                    break;
+                case 4:
+                    PerformOperation("Fibonacci Series Generator", "Enter the number of terms: ", GenerateFibonacci);
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
+                    break;
+            }
+        }
+    }
+
+    static void PerformOperation<T>(string operationName, string inputPrompt, Func<T, object> operation)
+    {
+        Console.WriteLine(operationName);
+        Console.Write(inputPrompt);
+        T userInput = (T)Convert.ChangeType(Console.ReadLine(), typeof(T));
+        Console.WriteLine($"Result: {operation(userInput)}");
+    }
+
+    static long Factorial(int n)
+    {
+        return n == 0 || n == 1 ? 1 : n * Factorial(n - 1);
+    }
+
+    static decimal ConvertCurrency(decimal usdAmount, decimal exchangeRate)
+    {
+        return usdAmount * exchangeRate;
+    }
+
+    static double GenerateFibonacci(int n)
+    {
+        if (n <= 1) return n;
+        return GenerateFibonacci(n - 1) + GenerateFibonacci(n - 2);
+    }
+}
