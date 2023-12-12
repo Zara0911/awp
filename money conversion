@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Currency Converter");
+
+        // Get user input for amount in USD
+        Console.Write("Enter amount in USD: ");
+        decimal usdAmount = decimal.Parse(Console.ReadLine());
+
+        // Hardcoded exchange rate (for example purposes)
+        decimal exchangeRate = 1.2m; // 1 USD to 1.2 units of another currency
+
+        // Calculate equivalent amount in another currency
+        decimal equivalentAmount = ConvertCurrency(usdAmount, exchangeRate);
+
+        // Display the result
+        Console.WriteLine($"Equivalent amount in another currency: {equivalentAmount}");
+
+        Console.ReadLine(); // To keep the console window open
+    }
+
+    // Function to convert currency
+    static decimal ConvertCurrency(decimal usdAmount, decimal exchangeRate)
+    {
+        return usdAmount * exchangeRate;
+    }
+}
