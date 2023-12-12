@@ -1,0 +1,14 @@
+create a web aplication then go to design and add adrorator 
+then create a xml file 
+Advertisements>
+	<Ad>
+		<ImageUrl>na.jpeg</ImageUrl>
+		<NavigateUrl>https://www.amazon.com</NavigateUrl>
+		<AlternateText></AlternateText>
+		<Impressions>10</Impressions>
+		<Keyword>Nature</Keyword>
+	</Ad>
+</Advertisements> 
+to add picture in file copy the image and then paste to addrorator file 
+then go to the  desing  then in addrotatar click the newsource and add xml file .
+then execute the program.
