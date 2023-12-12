@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cube Calculator");
+
+        // Get user input for the number
+        Console.Write("Enter a number: ");
+        double number = double.Parse(Console.ReadLine());
+
+        // Calculate the cube
+        double cube = CalculateCube(number);
+
+        // Display the result
+        Console.WriteLine($"Cube of {number} is: {cube}");
+
+        Console.ReadLine(); // To keep the console window open
+    }
+
+    // Function to calculate the cube
+    static double CalculateCube(double number)
+    {
+        return Math.Pow(number, 3);
+    }
+}
