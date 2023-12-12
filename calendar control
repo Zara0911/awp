@@ -1,0 +1,26 @@
+step 1: add calendar in .aspx file
+step 2:select calendar - properties - events - double click on dayrender
+now :-Q.display mesgs in calendar control
+   protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if(e.Day.Date.Year == 2023 && e.Day.Date.Month == 12 && e.Day.Date.Day == 13)
+            {
+                Label l1 = new Label();
+                l1.Text = "<br>ganpati";
+                e.Cell.Controls.Add(l1);
+            }
+Q3. SELECTED DAY IN CALENDAR CONTROL USING STYLE
+  CLICK ON A CALENDAR PROPERTIES And  DOUBLE CLICK ON SELECT SELECTEDDAY
+  protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            Calendar1.SelectedDayStyle.BackColor = System.Drawing.Color.Aqua;
+            Calendar1.SelectedDayStyle.ForeColor = System.Drawing.Color.Red;
+        }
+Q4.diff between two calendar 
+add another calendar2 in .aspx file in design ,add button ,add label
+then double click on button for code;-
+   protected void Button1_Click(object sender, EventArgs e)
+        {
+            TimeSpan ts = Calendar1.SelectedDate - Calendar2.SelectedDate;
+            Label1.Text = ts.TotalDays.ToString();
+        }
