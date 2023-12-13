@@ -1,0 +1,26 @@
+create a new project then go to design
+add label and text box then add requirefieldvalidator and click requirefieldvalidator and type the error msg *name required 
+and then down controltovalidate and select the textbox1
+to perform validation in vs 19 do some changes 
+go to the soluton explorer and double  click on web.config
+and add this code 
+<configuration>
+	<appSettings>
+		<add key="Validationsettings:unobtrusiveValidationMode" value="None"/>
+	</appSettings>
+	<system.web>
+and then go design
+or apne ap sai name textbox,enter pass ,confirm pass,enter you age ,email banao okkh
+then in confirmpass we use comparevalidator then right click og comparevalidator and go the properties and change the error msg to *same password
+ and do changes in controltocompare select that textboxno which you are using in enterpass
+and also click on controltovalidate  and select textboxno you are using confirm pass 
+for age we use rangevalidate right click and go to the property and type error msg *age above 18 to 30  and then click on controltovalidate and select the age
+textboxno an then give minimumvalue 18 and give maximum value 50
+and for email we use regularexpressonvalidator
+ then right click and go t property and do changes in error msg *email should be proper then click on controltovalidate and select the age textboxno 
+then go down see validationexpression and click and select the internet email address
+and then go to design and add button and double click on button and write this code
+ protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("submitted");
+        }
