@@ -1,0 +1,29 @@
+a)treeview control & datalist
+step 1 - create a new project  in web form 
+then go to design & add treeview then click on edit note then create a root node and child node.
+example.bcom
+          fybcom
+          sybcom
+          tybcom
+        bscit
+          fybscit
+          sybscit
+          tybscit
+in design page add datalist
+then go to the source code add this code
+ <asp:DataList ID="DataList1" runat="server">
+            <ItemTemplate>
+                <%# Eval("text") %>>
+            </ItemTemplate>
+        </asp:DataList>
+then go to design add button and double click on button then write is code
+{
+            TreeNodeCollection T;
+            T = TreeView1.CheckedNodes;
+            DataList1.DataSource = T;
+            DataList1.DataBind();
+            DataList1.Visible = true;
+        }
+then do changes in treeview go to edit note and select root node and do checked true &  do showcheckbox true
+sab root note or child note kai liye checked or showcheckbox ko true karna ha then click okhh 
+and  then run the excute the program.  
