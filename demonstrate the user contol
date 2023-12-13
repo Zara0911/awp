@@ -1,0 +1,12 @@
+in this at addnewiterm we select web forms user control.ascx
+and go to design
+ label1 rename as username and then  textbox1  
+ label2 rename as  pass and then textbox2
+  add button rename as signin and also add label3
+  then double click on button
+{
+  Label3.Text = "valid Login";
+}
+then cancel all the webformusercontrol.ascx and webformusercontrol.ascx.cs* and  save both 
+  to use this usercontrol in webform create a webform and go to design and see solutionexproler webformusercontrol.ascx just drag and drop to the design
+  then run the code 
